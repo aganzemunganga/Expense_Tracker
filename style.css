@@ -1,42 +1,111 @@
+/* ==========================================================
+   COLOR PALETTE
+   Primary (headings/buttons):  #7A0C2E  (deep burgundy)
+   Accent (highlights/hover):   #D4A24E  (warm gold)
+   Background:                  #FAF6F0  (soft cream)
+   Card background:             #FFFFFF
+   Text (body):                 #2B2B2B
+   Text (muted):                #6B6B6B
+   ========================================================== */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #FAF6F0;
+    color: #2B2B2B;
+    margin: 0;
+    padding: 30px 20px;
+    line-height: 1.5;
 }
+
+img {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+   Headings -> Poppins | Body text -> Inter
+   ========================================================== */
+
+h1, h2, h3 {
+    font-family: 'Poppins', 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+p, label, input, select, button, td, th {
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+/* ==========================================================
+   PAGE HEADING CARD (Box Model)
+   ========================================================== */
 
 h1 {
-    color: rgb(254, 254, 254);
-    background-color: rgb(114, 0, 0);
+    color: #FAF6F0;
+    background-color: #7A0C2E;
     padding: 20px;
-    border-radius: 11px;
+    margin: 0 auto 8px auto;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #5c0921;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(122, 12, 46, 0.25);
 }
+
+body > p {
+    text-align: center;
+    color: #6B6B6B;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   ADD EXPENSE FORM CARD (Box Model)
+   ========================================================== */
 
 .Add-Expense-section {
-    color: rgb(252, 252, 251);
-    background-color: rgb(114, 0, 0);
-    padding: 15px;
-    border-radius: 5px;
+    color: #2B2B2B;
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    border: 1px solid #e6ddd0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.Your-Expenses-section {
-    color: rgb(255, 255, 255);
-    background-color: rgb(114, 0, 0);
-    padding: 15px;
-    border-radius: 5px;
+.Add-Expense-section h2 {
+    color: #7A0C2E;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
 }
-
-/* ---------- Form styling ---------- */
 
 .Add-Expense-section form {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 320px;
+}
+
+.Add-Expense-section label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6B6B6B;
+    margin-bottom: 4px;
 }
 
 /* Direct child selector: only inputs that are direct children of the form */
-.Add-Expense-section form > input {
-    margin-bottom: 10px;
-    padding: 6px;
-    border-radius: 4px;
-    border: none;
+.Add-Expense-section form > input,
+.Add-Expense-section form > select {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #d8cfc2;
+    background-color: #FAF6F0;
+    color: #2B2B2B;
+    font-size: 0.95rem;
 }
 
 /* Negation pseudo-class: style every input that is NOT type="number" */
@@ -47,70 +116,131 @@ h1 {
 /* Focus state for inputs */
 .Add-Expense-section input:focus,
 .Add-Expense-section select:focus {
-    outline: 3px solid gold;
+    outline: none;
+    border-color: #D4A24E;
+    box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.35);
 }
 
 #add-expense-btn {
     cursor: pointer;
-    background-color: gold;
-    color: rgb(114, 0, 0);
+    background-color: #D4A24E;
+    color: #4A2E00;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
     margin-top: 5px;
+    transition: background-color 0.2s ease;
 }
 
 #add-expense-btn:hover {
-    background-color: rgb(255, 215, 0);
+    background-color: #c4912f;
 }
 
-/* ---------- Table styling ---------- */
+/* ==========================================================
+   EXPENSE TABLE CARD (Box Model)
+   ========================================================== */
+
+.Your-Expenses-section {
+    color: #2B2B2B;
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    border: 1px solid #e6ddd0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.Your-Expenses-section h3 {
+    color: #7A0C2E;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
 
 .expenses-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    background-color: white;
-    color: rgb(30, 30, 30);
+    margin-top: 5px;
+    background-color: #FFFFFF;
+    color: #2B2B2B;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Descendant selector */
 .Your-Expenses-section td,
 .Your-Expenses-section th {
-    border: 1px solid rgb(114, 0, 0);
-    padding: 10px;
+    border: 1px solid #e6ddd0;
+    padding: 12px 10px;
     text-align: left;
+    font-size: 0.9rem;
 }
 
 .expenses-table thead tr {
-    background-color: rgb(114, 0, 0);
-    color: white;
+    background-color: #7A0C2E;
+    color: #FAF6F0;
+}
+
+.expenses-table thead th {
+    font-weight: 600;
+    border-color: #5c0921;
 }
 
 /* Pseudo-class based on position: alternating row colors */
 .expenses-table tbody tr:nth-child(even) {
-    background-color: rgb(240, 220, 220);
+    background-color: #FAF1E4;
 }
 
 .expenses-table tbody tr:first-child {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Hover effect on rows */
 .expenses-table tbody tr:hover {
-    background-color: rgb(255, 200, 200);
+    background-color: rgba(212, 162, 78, 0.18);
 }
 
-/* ---------- Interactive / misc ---------- */
+/* ==========================================================
+   INTERACTIVE / MISC ELEMENTS (Box Model)
+   ========================================================== */
 
 .how-to-section {
-    margin: 15px 0;
-    padding: 10px;
-    border: 1px solid rgb(114, 0, 0);
-    border-radius: 5px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    padding: 14px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #e6ddd0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: #2B2B2B;
+}
+
+.how-to-section summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #7A0C2E;
 }
 
 .video-section {
-    margin-top: 20px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    padding: 20px 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #e6ddd0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.video-section h3 {
+    color: #7A0C2E;
+    margin-top: 0;
+}
+
+.video-section iframe {
+    max-width: 100%;
+    border-radius: 8px;
 }
